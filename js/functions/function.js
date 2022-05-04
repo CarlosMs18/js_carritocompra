@@ -3,6 +3,7 @@ import shop from '../classes/carrito.js'
 import ui from '../classes/UI.js'
 
 export function eventListener(){
+    document.addEventListener('DOMContentLoaded', recargarCursos)
     listaCursos.addEventListener('click',agregarCarrito)
     listaCarrito.addEventListener('click',eliminarProducto)
     btnVaciar.addEventListener('click',vaciarCarrito)
@@ -62,6 +63,11 @@ function eliminarProducto(e){
 
 function vaciarCarrito(){
     shop.vaciarProductos()
+    const {lista} = shop
+    ui.pintarHTML(lista)
+}
+
+function recargarCursos(){
     const {lista} = shop
     ui.pintarHTML(lista)
 }

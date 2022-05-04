@@ -2,6 +2,7 @@
 class Shop{
     constructor(){
         this.lista = []
+        this.leerLocalStorage()
     }
 
 
@@ -34,6 +35,14 @@ class Shop{
 
     vaciarProductos(){
         this.lista = []
+    }
+
+    guardarLocalStorage(){
+        localStorage.setItem('cursoss',JSON.stringify(this.lista))
+    }
+
+    leerLocalStorage(){
+        this.lista = JSON.parse(localStorage.getItem('cursoss')) || []
     }
 }
 

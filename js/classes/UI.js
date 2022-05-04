@@ -1,5 +1,5 @@
 import {carritoBody} from '../helpers/selectors.js'
-
+import shop from './carrito.js'
 class UI{
     constructor(){}
 
@@ -23,6 +23,8 @@ class UI{
             </tr>
             `
         })
+
+        shop.guardarLocalStorage()
     }
 
 
