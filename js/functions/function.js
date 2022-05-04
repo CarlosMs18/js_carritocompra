@@ -1,9 +1,10 @@
-import {listaCursos} from '../helpers/selectors.js'
+import {listaCursos , listaCarrito} from '../helpers/selectors.js'
 import shop from '../classes/carrito.js'
 import ui from '../classes/UI.js'
 
 export function eventListener(){
     listaCursos.addEventListener('click',agregarCarrito)
+    listaCarrito.addEventListener('click',eliminarProducto)
 }
 
 
@@ -45,6 +46,16 @@ function nuevoCurso(curso){
 
     ui.pintarHTML(lista)
 
+}
+
+
+function eliminarProducto(e){
+    if(e.target.classList.contains('borrar-curso')){
+        const idCurso  = e.target.getAttribute('data-id')
+        shop.eliminarCurso(idCurso)
+        const {lista} = shop
+        ui.pintarHTML(lista)
+    }
 }
 
 

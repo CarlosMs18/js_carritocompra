@@ -23,6 +23,14 @@ class Shop{
     
       
     }
+
+
+    eliminarCurso(idCurso){
+       
+      
+       this.lista = this.lista.filter(p => p.id != idCurso)
+     
+    }
 }
 
 const shop = new Shop()

@@ -4,8 +4,9 @@ class UI{
     constructor(){}
 
     pintarHTML(cursos){
+        this.limpiarHTML()
         cursos.forEach(curso => {
-          
+         
             const {id, imagen, name, cantidad,precio} = curso
             carritoBody.innerHTML += `
             <tr>
@@ -22,6 +23,14 @@ class UI{
             </tr>
             `
         })
+    }
+
+
+    limpiarHTML(){
+        while(carritoBody.firstChild){
+         
+            carritoBody.removeChild(carritoBody.firstChild)
+        }
     }
 }
 
