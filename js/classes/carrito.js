@@ -31,6 +31,10 @@ class Shop{
        this.lista = this.lista.filter(p => p.id != idCurso)
      
     }
+
+    vaciarProductos(){
+        this.lista = []
+    }
 }
 
 const shop = new Shop()
